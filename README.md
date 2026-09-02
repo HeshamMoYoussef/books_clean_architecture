@@ -202,6 +202,17 @@ This mirrors a minimal production release gate: nothing merges to `main` without
 
 ---
 
+## 🛰 Modernization Roadmap
+
+Documented here as an honest forward-look, not implemented in this reference repo:
+
+- **Offline-first cache-through repository**: `HomeRepoImpl` already reads from Hive on failure — the natural next step is a stale-while-revalidate strategy so the UI never blocks on network latency for previously-seen data.
+- **CI-integrated golden/widget-diff testing** to catch presentation regressions automatically, extending the current `analyze-and-test` job.
+- **AI-assisted code review gating** (e.g. an MCP-connected review agent in CI) as a second automated reviewer alongside `flutter analyze`, flagging architectural-boundary violations before merge.
+- **Modular federation** of the `home`/`search`/`splash` features into independently versioned packages once a second consumer app needs to share this catalog logic.
+
+---
+
 ## 📂 Project Structure Philosophy
 
 This repo is a **teaching reference**, not a feature-complete product. The goal is to demonstrate:
