@@ -34,29 +34,26 @@ class Bookly extends StatelessWidget {
         BlocProvider(
           create: (context) {
             return FeaturedBooksCubit(
-              FetchFeaturedBooksUseCase(
-                getIt.get<HomeRepoImpl>(),
-              ),
+              FetchFeaturedBooksUseCase(getIt.get<HomeRepoImpl>()),
             )..fetchFeaturedBooks();
           },
         ),
         BlocProvider(
           create: (context) {
             return NewestBooksCubit(
-              FetchNewestBooksUseCase(
-                getIt.get<HomeRepoImpl>(),
-              ),
+              FetchNewestBooksUseCase(getIt.get<HomeRepoImpl>()),
             );
           },
-        )
+        ),
       ],
       child: MaterialApp.router(
         routerConfig: AppRouter.router,
         debugShowCheckedModeBanner: false,
         theme: ThemeData.dark().copyWith(
           scaffoldBackgroundColor: kPrimaryColor,
-          textTheme:
-              GoogleFonts.montserratTextTheme(ThemeData.dark().textTheme),
+          textTheme: GoogleFonts.montserratTextTheme(
+            ThemeData.dark().textTheme,
+          ),
         ),
       ),
     );

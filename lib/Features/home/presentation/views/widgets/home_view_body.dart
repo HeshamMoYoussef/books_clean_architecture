@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../../../../../core/utils/styles.dart';
 import 'best_seller_list_view.dart';
 import 'custom_app_bar.dart';
@@ -16,24 +17,16 @@ class HomeViewBody extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: 30,
-                  ),
-                  child: CustomAppBar()),
-              FeatuedBooksListViewBlocBuilder(),
-              SizedBox(
-                height: 50,
+                padding: EdgeInsets.symmetric(horizontal: 30),
+                child: CustomAppBar(),
               ),
+              FeatuedBooksListViewBlocBuilder(),
+              SizedBox(height: 50),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 30),
-                child: Text(
-                  'Best Seller',
-                  style: Styles.textStyle18,
-                ),
+                child: Text('Best Seller', style: Styles.textStyle18),
               ),
-              SizedBox(
-                height: 20,
-              ),
+              SizedBox(height: 20),
             ],
           ),
         ),

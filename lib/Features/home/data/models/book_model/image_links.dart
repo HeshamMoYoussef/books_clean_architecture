@@ -5,12 +5,12 @@ class ImageLinks {
   ImageLinks({this.smallThumbnail, this.thumbnail});
 
   factory ImageLinks.fromJson(Map<String, dynamic> json) => ImageLinks(
-        smallThumbnail: json['smallThumbnail'] as String?,
-        thumbnail: json['thumbnail'] as String?,
-      );
+    smallThumbnail: json['smallThumbnail'] as String?,
+    thumbnail: json['thumbnail'] as String?,
+  );
 
   Map<String, dynamic> toJson() => {
-        'smallThumbnail': smallThumbnail,
-        'thumbnail': thumbnail,
-      };
+    'smallThumbnail': smallThumbnail,
+    'thumbnail': thumbnail,
+  };
 }

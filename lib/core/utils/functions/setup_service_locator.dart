@@ -9,17 +9,11 @@ import '../api_service.dart';
 final getIt = GetIt.instance;
 
 void setupServiceLocator() {
-  getIt.registerSingleton<ApiService>(
-    ApiService(
-      Dio(),
-    ),
-  );
+  getIt.registerSingleton<ApiService>(ApiService(Dio()));
   getIt.registerSingleton<HomeRepoImpl>(
     HomeRepoImpl(
       homeLocalDataSource: HomeLocalDataSourceImpl(),
-      homeRemoteDataSource: HomeRemoteDataSourceImpl(
-        getIt.get<ApiService>(),
-      ),
+      homeRemoteDataSource: HomeRemoteDataSourceImpl(getIt.get<ApiService>()),
     ),
   );
 }

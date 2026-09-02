@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -16,10 +14,13 @@ class NewestBooksCubit extends Cubit<NewestBooksState> {
   Future<void> fetchNewestBooks() async {
     emit(NewestBooksLoading());
     var result = await fetchNewestdBooksUseCase.call();
-    result.fold((failure) {
-      emit(NewestBooksFailure(failure.message));
-    }, (books) {
-      emit(NewestBooksSuccess(books));
-    });
+    result.fold(
+      (failure) {
+        emit(NewestBooksFailure(failure.message));
+      },
+      (books) {
+        emit(NewestBooksSuccess(books));
+      },
+    );
   }
 }

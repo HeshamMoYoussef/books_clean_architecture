@@ -7,7 +7,7 @@ import 'custom_book_item.dart';
 
 class FeaturedBooksListView extends StatefulWidget {
   const FeaturedBooksListView({Key? key, required this.books})
-      : super(key: key);
+    : super(key: key);
 
   final List<BookEntity> books;
 
@@ -57,9 +57,7 @@ class _FeaturedBooksListViewState extends State<FeaturedBooksListView> {
         itemBuilder: (context, index) {
           return Padding(
             padding: const EdgeInsets.symmetric(horizontal: 8),
-            child: CustomBookImage(
-              image: widget.books[index].image ?? '',
-            ),
+            child: CustomBookImage(image: widget.books[index].image ?? ''),
           );
         },
       ),

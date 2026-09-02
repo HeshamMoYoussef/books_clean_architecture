@@ -25,11 +25,12 @@ class ServerFailure extends Failure {
         return ServerFailure('badCertificate with api server');
       case DioExceptionType.badResponse:
         return ServerFailure.fromResponse(
-            e.response!.statusCode!, e.response!.data);
+          e.response!.statusCode!,
+          e.response!.data,
+        );
       case DioExceptionType.unknown:
         return ServerFailure('Opps There was an Error, Please try again');
     }
-
   }
 
   factory ServerFailure.fromResponse(int statusCode, dynamic response) {
